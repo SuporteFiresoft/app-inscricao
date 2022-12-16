@@ -40,7 +40,33 @@ $digito1 = $dezenaSuperior - $soma;
 $codigoInicial += strval($digito1);
 //____________________________________
 
-//A segunda parte, pega o valor final da primeira parte, multiplicar da direita pra esquerda o array total -1 posição, e multiplica por dois, tira -1 e multiplica por 3 até chegar no indice 0
-for ($i = count($codigoInicial); $i > 0; $i--) {
+$arrModInv = [];
+$ind = 2;
+$soma = 0;
+
+for ($i = count($codigoInicial) - 1; $i >= 0; $i--) {
+    $numInv = intval($codigoInicial[$i]);
+    $result = 0;
+    if ($ind <= 11) {
+        $result = $numInv * $ind;
+        array_push($arrModInv, $result);
+        $ind++;
+    } else {
+        $ind = 2;
+        $result = $numInv * $ind;
+        array_push($arrModInv, $result);
+        $ind++;
+    }
 }
-//soma os produtos das multiplicações num foreach em que cada item é somado a uma variavel
+
+$somaFim = 0;
+
+for ($i = 0; $i < count($arrModInv); $i++) {
+    $somaFim += $arrModInv[$i];
+}
+
+if (($somaFim % 11) == 0 || ($somaFim % 11) == 1) {
+    $codigoInicial += strval($somaFim % 11);
+} else {
+    $codigoInicial += strval(11 - ($somaFim % 11));
+}
