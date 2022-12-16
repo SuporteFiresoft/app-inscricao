@@ -1,14 +1,14 @@
 <?php
 //A = município, B = inscrição, C = ordem do estabelecimento, D = Dígito de controle
 //A1A2A3 B1B2B3B4B5B6 C1C2 D1D2
-$codigoInscricao = "06230790400";
+$codigoInscricao = "45206050000";
 $codigoAlterado = "";
 
 //acrescenta o 0 depois dos 3 primeiros numeros
 for ($i = 1; $i < 11; $i++) {
     if ($i == 3) {
 
-        return $codigoAlterado = "062030790400";
+        return $codigoAlterado = "452006050000";
     }
     return;
 }
@@ -71,3 +71,5 @@ if (($somaFim % 11) == 0 || ($somaFim % 11) == 1) {
 } else {
     $codigoInscricao += strval(11 - ($somaFim % 11));
 }
+
+//Tem que retornar true ou false
