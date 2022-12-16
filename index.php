@@ -1,5 +1,5 @@
 <?php
-//A = município, B = inscrição, C = ordem do estabelecimento
+//A = município, B = inscrição, C = ordem do estabelecimento, D = Dígito de controle
 //A1A2A3 B1B2B3B4B5B6 C1C2 D1D2
 $codigoInicial = "06230790400";
 $codigo1 = "";
